@@ -12,31 +12,41 @@ export default function PostcardPreview({
   ingredients,
 }: PostcardPreviewProps) {
   return (
-    <div className="rounded-3xl bg-white p-8 shadow-sm">
-      <h2 className="mb-2 text-2xl font-bold">
+    <div className="rounded-3xl bg-white p-8 shadow-lg">
+      <p className="mb-2 text-sm uppercase tracking-[0.2em] text-stone-500">
+        Dear Tomorrow
+      </p>
+
+      <h2 className="mb-2 text-3xl font-bold">
         {title || "Your Perfect Day"}
       </h2>
 
-      <p className="mb-6 text-stone-500">
+      <p className="mb-8 text-sm text-stone-500">
         {date || "Future Date"}
       </p>
 
-      <p className="mb-8 whitespace-pre-wrap text-stone-700">
+      <div className="mb-10 whitespace-pre-wrap leading-8 text-stone-700">
         {letter || "Your postcard preview will appear here."}
-      </p>
+      </div>
 
-      <div>
+      <div className="border-t border-stone-200 pt-6">
         <h3 className="mb-4 text-lg font-semibold">
           Recipe for a Perfect Day
         </h3>
 
-        <ul className="space-y-2">
-          {ingredients.map((ingredient) => (
-            <li key={ingredient}>
-              • {ingredient}
-            </li>
-          ))}
-        </ul>
+        {ingredients.length === 0 ? (
+          <p className="text-stone-500">
+            Add some ingredients to build your recipe.
+          </p>
+        ) : (
+          <ul className="space-y-2">
+            {ingredients.map((ingredient) => (
+              <li key={ingredient}>
+                • {ingredient}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
