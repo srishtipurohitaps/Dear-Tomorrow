@@ -7,7 +7,7 @@ export default function Hero() {
         Dear Tomorrow
       </p>
 
-      <h1 className="max-w-4xl text-5xl font-bold leading-tight md:text-7xl">
+      <h1 className="handwritten max-w-4xl text-5xl leading-tight md:text-7xl">
         What if your perfect day could write back?
       </h1>
 

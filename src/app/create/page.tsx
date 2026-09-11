@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
 import RecipeBuilder from "@/components/RecipeBuilder";
 import PostcardPreview from "@/components/PostcardPreview";
 import { savePostcard } from "@/lib/storage";
@@ -31,7 +32,11 @@ export default function CreatePage() {
   return (
     <main className="min-h-screen bg-[#F8F2E8] px-6 py-12 text-stone-800">
       <div className="mx-auto max-w-6xl">
-        <h1 className="mb-2 text-5xl font-bold">
+        <div className="mb-8">
+          <Navbar />
+        </div>
+
+        <h1 className="handwritten mb-2 text-6xl">
           Create Your Postcard
         </h1>
 
@@ -40,7 +45,7 @@ export default function CreatePage() {
         </p>
 
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
+          <div className="paper-card p-8">
             <h2 className="mb-6 text-2xl font-semibold">
               Letter Details
             </h2>
@@ -78,7 +83,7 @@ export default function CreatePage() {
 
               <button
                 onClick={handleSave}
-                className="mt-4 rounded-full bg-stone-900 px-6 py-3 text-white"
+                className="mt-4 vintage-button"
               >
                 Seal Postcard
               </button>

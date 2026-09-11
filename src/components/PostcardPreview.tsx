@@ -12,20 +12,20 @@ export default function PostcardPreview({
   ingredients,
 }: PostcardPreviewProps) {
   return (
-    <div className="rounded-3xl bg-white p-8 shadow-lg">
+    <div className="paper-card p-8">
       <p className="mb-2 text-sm uppercase tracking-[0.2em] text-stone-500">
         Dear Tomorrow
       </p>
 
-      <h2 className="mb-2 text-3xl font-bold">
+      <h2 className="handwritten mb-2 text-6xl">
         {title || "Your Perfect Day"}
       </h2>
 
-      <p className="mb-8 text-sm text-stone-500">
+      <p className="mb-8 text-sm uppercase tracking-[0.2em] text-stone-500">
         {date || "Future Date"}
       </p>
 
-      <div className="mb-10 whitespace-pre-wrap leading-8 text-stone-700">
+      <div className="mb-10 whitespace-pre-wrap leading-9 text-stone-700">
         {letter || "Your postcard preview will appear here."}
       </div>
 
