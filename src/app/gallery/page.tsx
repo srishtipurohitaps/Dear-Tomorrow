@@ -16,7 +16,7 @@ export default function GalleryPage() {
       <div className="mx-auto max-w-6xl">
         <Navbar />
 
-        <h1 className="mb-10 text-5xl font-bold">
+        <h1 className="handwritten mb-10 text-center text-6xl">
           Gallery
         </h1>
 
@@ -25,7 +25,7 @@ export default function GalleryPage() {
             <p>No postcards yet.</p>
           </div>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
             {postcards.map((postcard) => (
               <div
                 key={postcard.id}

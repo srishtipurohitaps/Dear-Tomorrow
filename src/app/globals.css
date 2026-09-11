@@ -48,20 +48,11 @@ a {
 
 button {
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
 }
 
 input,
 textarea {
   font: inherit;
-}
-
-input,
-textarea {
   border: 1px solid #d7cfc3;
   background: #fffdf8;
 }
@@ -74,7 +65,7 @@ textarea:focus {
 }
 
 .handwritten {
-  font-family: "Caveat", cursive;
+  font-family: var(--font-caveat);
 }
 
 .postcard {
@@ -85,17 +76,28 @@ textarea:focus {
 }
 
 .vintage-button {
-  background: var(--accent-light);
-  color: var(--foreground);
-  border: 2px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #8b6b4a;
+  color: #fffdf8 !important;
+
+  border: 2px solid #6c5032;
   border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
+
+  padding: 0.85rem 1.75rem;
+
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+
+  box-shadow: 0 6px 16px rgba(107, 80, 50, 0.25);
+
+  transition: all 0.2s ease;
 }
 
 .vintage-button:hover {
-  background: #cfb99a;
+  background: #7a5c3f;
   transform: translateY(-2px);
 }
 

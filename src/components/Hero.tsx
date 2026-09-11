@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="flex min-h-[80vh] flex-col items-center justify-center text-center">
-      <p className="mb-4 text-sm uppercase tracking-[0.3em] text-stone-500">
+      <p className="handwritten mb-4 text-3xl text-stone-600">
         Dear Tomorrow
       </p>
 
@@ -18,7 +18,7 @@ export default function Hero() {
 
       <Link
         href="/create"
-        className="mt-8 rounded-full bg-stone-900 px-6 py-3 text-white transition hover:bg-stone-700"
+        className="mt-10 vintage-button text-lg"
       >
         Create Postcard
       </Link>

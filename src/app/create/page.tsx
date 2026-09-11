@@ -11,6 +11,7 @@ export default function CreatePage() {
   const [date, setDate] = useState("");
   const [letter, setLetter] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
+  const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
     savePostcard({
@@ -21,7 +22,11 @@ export default function CreatePage() {
       ingredients,
     });
 
-    alert("Postcard sealed and saved!");
+    setSaved(true);
+
+    setTimeout(() => {
+      setSaved(false);
+    }, 3000);
 
     setTitle("");
     setDate("");
@@ -43,6 +48,12 @@ export default function CreatePage() {
         <p className="mb-10 text-stone-600">
           Write a letter from your future perfect day and build its recipe.
         </p>
+
+        {saved && (
+          <div className="mb-4 rounded-xl bg-green-100 p-4 text-green-800">
+            Postcard sealed successfully.
+          </div>
+        )}
 
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="paper-card p-8">
