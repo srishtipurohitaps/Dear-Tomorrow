@@ -1,14 +1,16 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between py-6">
-      <h1 className="text-xl font-bold">
+      <Link href="/" className="text-xl font-semibold">
         Dear Tomorrow
-      </h1>
+      </Link>
 
       <div className="flex gap-6">
-        <span>Home</span>
-        <span>Create</span>
-        <span>Gallery</span>
+        <Link href="/">Home</Link>
+        <Link href="/create">Create</Link>
+        <Link href="/gallery">Gallery</Link>
       </div>
     </nav>
   );

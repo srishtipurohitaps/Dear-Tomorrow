@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="flex min-h-[80vh] flex-col items-center justify-center text-center">
@@ -14,9 +16,12 @@ export default function Hero() {
         moments, people, and experiences that made it unforgettable.
       </p>
 
-      <button className="mt-8 rounded-full bg-stone-900 px-6 py-3 text-white transition hover:bg-stone-700">
+      <Link
+        href="/create"
+        className="mt-8 rounded-full bg-stone-900 px-6 py-3 text-white transition hover:bg-stone-700"
+      >
         Create Postcard
-      </button>
+      </Link>
     </section>
   );
 }

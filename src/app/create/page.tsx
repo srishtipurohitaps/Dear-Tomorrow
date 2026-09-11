@@ -2,12 +2,31 @@
 
 import { useState } from "react";
 import RecipeBuilder from "@/components/RecipeBuilder";
+import PostcardPreview from "@/components/PostcardPreview";
+import { savePostcard } from "@/lib/storage";
 
 export default function CreatePage() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [letter, setLetter] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
+
+  const handleSave = () => {
+    savePostcard({
+      id: crypto.randomUUID(),
+      title,
+      date,
+      letter,
+      ingredients,
+    });
+
+    alert("Postcard sealed and saved!");
+
+    setTitle("");
+    setDate("");
+    setLetter("");
+    setIngredients([]);
+  };
 
   return (
     <main className="min-h-screen bg-[#F8F2E8] px-6 py-12 text-stone-800">
@@ -56,42 +75,22 @@ export default function CreatePage() {
                   setIngredients={setIngredients}
                 />
               </div>
+
+              <button
+                onClick={handleSave}
+                className="mt-4 rounded-full bg-stone-900 px-6 py-3 text-white"
+              >
+                Seal Postcard
+              </button>
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h2 className="mb-6 text-2xl font-semibold">
-              Live Preview
-            </h2>
-
-            <div className="rounded-2xl border p-6">
-              <h3 className="text-2xl font-bold">
-                {title || "Your Perfect Day"}
-              </h3>
-
-              <p className="mt-2 text-sm text-stone-500">
-                {date || "Future Date"}
-              </p>
-
-              <div className="mt-6 whitespace-pre-wrap text-stone-700">
-                {letter || "Your postcard preview will appear here."}
-              </div>
-
-              <div className="mt-8">
-                <h3 className="mb-4 text-lg font-semibold">
-                  Recipe for a Perfect Day
-                </h3>
-
-                <ul className="space-y-2">
-                  {ingredients.map((ingredient) => (
-                    <li key={ingredient}>
-                      • {ingredient}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+          <PostcardPreview
+            title={title}
+            date={date}
+            letter={letter}
+            ingredients={ingredients}
+          />
         </div>
       </div>
     </main>
